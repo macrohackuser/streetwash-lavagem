@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreetWash - Lavagem Profissional de Carros em Porto Alegre</title>
+    <meta name="description" content="Lavagem profissional de carros em Porto Alegre. Agende agora! Lavagem completa, premium e básica. Atendimento de qualidade.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="streetwash-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🚗</div>
+                    <div>
+                        <div class="logo-text">StreetWash</div>
+                        <div class="logo-subtitle">Lavagem Profissional</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content fade-in-up">
+                <h1 class="hero-title">Seu Carro Brilhando em Porto Alegre</h1>
+                <p class="hero-subtitle">Lavagem profissional com produtos premium e atendimento especializado. Agende agora e tenha o carro dos sonhos!</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="openBooking()">
+                        <span>📅</span> Agendar Lavagem
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToServices()">
+                        <span>💦</span> Ver Serviços
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTADORES -->
+    <div class="container">
+        <div class="counters-section">
+            <div class="counters-grid">
+                <div class="counter-card">
+                    <div class="counter-number" id="carCount">0</div>
+                    <div class="counter-label">Carros Lavados Hoje</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-number">10-15</div>
+                    <div class="counter-label">Minutos de Espera</div>
+                </div>
+                <div class="counter-card">
+                    <div class="counter-number">4.8</div>
+                    <div class="counter-label">Avaliação dos Clientes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços em Porto Alegre</h2>
+            <div class="services-grid">
+                <!-- Lavagem Básica -->
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">💦</div>
+                    <h3>Lavagem Express</h3>
+                    <div class="price">R$ 30</div>
+                    <ul class="service-features">
+                        <li>Lavagem externa completa</li>
+                        <li>Secagem com toalhas de microfibra</li>
+                        <li>Limpeza de todos os vidros</li>
+                        <li>Pneu brilhante</li>
+                        <li>Duração: 15-20 minutos</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking()">Agendar Agora</button>
+                </div>
+
+                <!-- Lavagem Premium -->
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">✨</div>
+                    <h3>Lavagem Premium</h3>
+                    <div class="price">R$ 55</div>
+                    <ul class="service-features">
+                        <li>Lavagem express + cera líquida</li>
+                        <li>Proteção da pintura</li>
+                        <li>Limpeza detalhada de rodas</li>
+                        <li>Aspiração rápida interna</li>
+                        <li>Duração: 30-40 minutos</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking()">Agendar Agora</button>
+                </div>
+
+                <!-- Lavagem Completa -->
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">🎯</div>
+                    <h3>Lavagem Completa</h3>
+                    <div class="price">R$ 85</div>
+                    <ul class="service-features">
+                        <li>Serviço premium completo</li>
+                        <li>Limpeza interna detalhada</li>
+                        <li>Hidratação de plásticos e painéis</li>
+                        <li>Limpeza de tapetes e bancos</li>
+                        <li>Duração: 45-60 minutos</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="openBooking()">Agendar Agora</button>
+                </div>
+            </div>
+
+            <!-- CALCULADORA DE PREÇOS -->
+            <div class="price-calculator">
+                <h3 class="calculator-title">Calcule o Valor do Seu Serviço</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="serviceType">Tipo de Serviço</label>
+                        <select id="serviceType" class="form-select">
+                            <option value="">Selecione o serviço...</option>
+                            <option value="basic">Lavagem Express - R$ 30</option>
+                            <option value="premium">Lavagem Premium - R$ 55</option>
+                            <option value="complete">Lavagem Completa - R$ 85</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicleType">Tipo de Veículo</label>
+                        <select id="vehicleType" class="form-select">
+                            <option value="">Selecione o veículo...</option>
+                            <option value="carro">Carro Popular</option>
+                            <option value="suv">SUV/Utilitário (+R$ 10)</option>
+                            <option value="moto">Moto (-R$ 15)</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="priceResult" class="price-result">
+                    <div style="color: var(--text-gray);">Selecione as opções acima para calcular</div>
+                </div>
+                <button onclick="calculatePrice()" class="btn btn-primary" style="width: 100%;">
+                    <span>💰</span> Calcular Preço Exato
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+            <div class="reviews-grid">
+                <div class="review-card fade-in-up">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Melhor lavagem de Porto Alegre! Sempre deixo meu carro aqui. Rápido, eficiente e o preço é justo. Recomendo!"</p>
+                    <div class="review-author">Carlos Silva - Centro Histórico</div>
+                </div>
+                <div class="review-card fade-in-up">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Atendimento excelente! Fizeram meu SUV ficar zero em menos de 30 minutos. Já indiquei para toda família."</p>
+                    <div class="review-author">Ana Souza - Moinhos de Vento</div>
+                </div>
+                <div class="review-card fade-in-up">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-text">"Muito profissional! Preço bom e fazem um serviço completo. Sempre volto quando preciso lavar o carro."</p>
+                    <div class="review-author">Roberto Santos - Menino Deus</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Telefone & WhatsApp</h4>
+                            <p>+55 51 9952-2076</p>
+                            <small style="color: var(--primary-green);">Atendimento rápido!</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contato@streetwashpoa.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Av. Protásio Alves, 1000 - Porto Alegre/RS</p>
+                            <small style="color: var(--text-gray);">Próximo ao Bourbon Country</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sexta: 8h às 19h</p>
+                            <p>Sábados: 8h às 16h</p>
+                            <small style="color: var(--primary-green);">Atendimento sem fechar ao meio-dia</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h4 style="color: var(--text-light); margin-bottom: 25px;">Envie sua Mensagem</h4>
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name">Seu Nome</label>
+                                <input type="text" id="name" class="form-input" required placeholder="Como prefere ser chamado">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone/WhatsApp</label>
+                                <input type="tel" id="phone" class="form-input" required placeholder="(51) 99999-9999">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email (opcional)</label>
+                                <input type="email" id="email" class="form-input" placeholder="seu@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Serviço de Interesse</label>
+                                <select id="service" class="form-select">
+                                    <option value="basic">Lavagem Express - R$ 30</option>
+                                    <option value="premium">Lavagem Premium - R$ 55</option>
+                                    <option value="complete">Lavagem Completa - R$ 85</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem ou Observações</label>
+                                <textarea id="message" class="form-textarea" rows="4" placeholder="Alguma observação especial? Nos conte..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                            <span>📨</span> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="streetwash-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>StreetWash POA</h3>
+                    <p>Lavagem profissional de carros em Porto Alegre. Qualidade, agilidade e preço justo. Seu carro merece o melhor cuidado!</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/5551999522076" target="_blank" class="social-link">💬</a>
+                        <a href="https://instagram.com/streetwashpoa" target="_blank" class="social-link">📷</a>
+                        <a href="https://facebook.com/streetwashpoa" target="_blank" class="social-link">📘</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Nossos Serviços</h3>
+                    <ul class="footer-links">
+                        <li><a href="#servicos">Lavagem Express - R$ 30</a></li>
+                        <li><a href="#servicos">Lavagem Premium - R$ 55</a></li>
+                        <li><a href="#servicos">Lavagem Completa - R$ 85</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#precos">Preços</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Área de Atendimento</h3>
+                    <ul class="footer-links">
+                        <li><a>Porto Alegre - Centro</a></li>
+                        <li><a>Moinhos de Vento</a></li>
+                        <li><a>Bela Vista</a></li>
+                        <li><a>Menino Deus</a></li>
+                        <li><a>E toda região metropolitana</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StreetWash Porto Alegre. Todos os direitos reservados.</p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: var(--text-gray);">Telefone/WhatsApp: +55 51 9952-2076</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE AGENDAMENTO -->
+    <div id="bookingModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Agendar Lavagem</h3>
+            <div class="booking-steps">
+                <div class="booking-step active" data-step="1">
+                    <h4>Escolha o Serviço</h4>
+                    <div class="service-options">
+                        <div class="service-option" data-service="basic">
+                            <h5>Lavagem Express</h5>
+                            <p>Lavagem externa + secagem rápida</p>
+                            <span class="price">R$ 30</span>
+                        </div>
+                        <div class="service-option" data-service="premium">
+                            <h5>Lavagem Premium</h5>
+                            <p>Lavagem completa + cera + aspiração</p>
+                            <span class="price">R$ 55</span>
+                        </div>
+                        <div class="service-option" data-service="complete">
+                            <h5>Lavagem Completa</h5>
+                            <p>Serviço premium + interior detalhado</p>
+                            <span class="price">R$ 85</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-step" data-step="2">
+                    <h4>Escolha o Veículo</h4>
+                    <div class="vehicle-options">
+                        <div class="vehicle-option" data-vehicle="carro">
+                            <span>🚗</span>
+                            <p>Carro Popular</p>
+                            <small>Preço normal</small>
+                        </div>
+                        <div class="vehicle-option" data-vehicle="suv">
+                            <span>🚙</span>
+                            <p>SUV/Utilitário</p>
+                            <small>+ R$ 10</small>
+                        </div>
+                        <div class="vehicle-option" data-vehicle="moto">
+                            <span>🏍️</span>
+                            <p>Moto</p>
+                            <small>- R$ 15</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-step" data-step="3">
+                    <h4>Confirme seu Agendamento</h4>
+                    <div id="orderSummary"></div>
+                    <button id="confirmBooking" class="btn btn-primary" style="width: 100%; margin-top: 20px;">
+                        <span>📅</span> Confirmar pelo WhatsApp
+                    </button>
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button id="prevStep" style="display: none; background: var(--dark-surface); color: var(--text-gray); padding: 12px 24px; border: 2px solid var(--border-dark); border-radius: 8px; cursor: pointer;">← Voltar</button>
+                <button id="nextStep" style="background: var(--primary-green); color: var(--dark-bg); padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">Próximo →</button>
+                <button id="closeModal" style="background: #ff4757; color: white; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer;">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO WHATSAPP -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/5551999522076?text=Olá! Gostaria de agendar uma lavagem na StreetWash Porto Alegre" target="_blank" class="whatsapp-link">
+            <span style="font-size: 2em;">💬</span>
+        </a>
+        <div class="whatsapp-tooltip">
+            Falar no WhatsApp
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
